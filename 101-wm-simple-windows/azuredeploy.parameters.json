@@ -3,17 +3,19 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "newStorageAccountName": {
-      "value": "myStorageAccount"
+      "value": "meestore1"
     },
     "adminUsername": {
       "value": "admin123"
     },
     "adminPassword": {
-      "value": "ADmin123_!"
+      "value": "Passw0rd!"
     },
     "dnsNameForPublicIP": {
-      "value": "myDnsName"
-    }
+      "value": "mee1234"
+    },
+    "location":{"value": "WESt US"},
+    "sizeOfDiskInGB":{"value": "20"}
   }
 }
 
