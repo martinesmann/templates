@@ -14,7 +14,7 @@
     "dnsNameForPublicIP": {
       "value": "mee1234"
     },
-    "location":{"value": "WESt US"},
+    "location":{"value": "West US"},
     "sizeOfDiskInGB":{"value": "20"}
   }
 }

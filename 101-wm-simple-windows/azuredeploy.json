@@ -49,7 +49,7 @@
         "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version. Allowed values: 2008-R2-SP1, 2012-Datacenter, 2012-R2-Datacenter."
       }
     },
-    "sizeOfEachDataDiskInGB":{
+    "sizeOfDiskInGB":{
         "type": "string",
         "metadata": {
             "description" : "Size in GB..."
@@ -148,7 +148,7 @@
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
-      "location": "[parameters('location')paramters('location']",
+      "location": "[parameters('location')]",
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', parameters('newStorageAccountName'))]",
         "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
@@ -158,7 +158,7 @@
           "vmSize": "[variables('vmSize')]"
         },
         "osProfile": {
-          "computername": "[variables('vmName')]",
+          "computerName": "[variables('vmName')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
@@ -176,19 +176,20 @@
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          }
-        },
+          },
+      
         "dataDisks":[
             {
                 "name":"datadisk1",
                 "diskSizeGB":"[parameters('sizeOfDiskInGB')]",
                 "lun":0,
                 "vhd":{  
-                    "Uri":"[variables('dataDisk1VhdName')]"
+                    "uri":"[variables('dataDisk1VhdName')]"
                 },
                 "createOption":"Empty"
             }
-        ],
+        ]
+        },
         "networkProfile": {
           "networkInterfaces": [
             {
